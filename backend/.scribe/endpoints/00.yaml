@@ -1,0 +1,256 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: phbzzcuzepxoxhfqpjrfvxuveoospyopyvsvikizfgwfokxoitbtfvxjwopzozykgrjhiodkagbyleqcmtdwtqmpmk
+        type: string
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: zoneqhbkfokpflwvsqmxmaaipepataqxlmtvcpksevdxnprelvfbxhcedoodcfygjcztleudlpuavfrcgcpfvsivozhghna
+        type: string
+      password:
+        name: password
+        description: 'Must be at least 6 characters.'
+        required: true
+        example: ihbtxi
+        type: string
+      job:
+        name: job
+        description: ''
+        required: true
+        example: porro
+        type: string
+      description:
+        name: description
+        description: ''
+        required: true
+        example: molestias
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: aglae95@example.com
+        type: string
+      password:
+        name: password
+        description: 'Must be at least 6 characters.'
+        required: true
+        example: bxvm
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/admin/schedules
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/admin/schedule/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the schedule.'
+        required: true
+        example: 17
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: ''
+        required: false
+        example: doloremque
+        type: string
+      start_time:
+        name: start_time
+        description: 'Must be a valid date.'
+        required: false
+        example: '2021-10-19T19:17:35'
+        type: string
+      end_time:
+        name: end_time
+        description: 'Must be a valid date. Must be a date after or equal to <code>start_time</code>.'
+        required: false
+        example: '2065-11-19'
+        type: string
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: 6
+        type: integer
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/create/schedule
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      start_time:
+        name: start_time
+        description: 'Must be a valid date.'
+        required: true
+        example: '2021-10-19T19:17:35'
+        type: string
+      end_time:
+        name: end_time
+        description: 'Must be a valid date. Must be a date after or equal to <code>start_time</code>.'
+        required: true
+        example: '2031-06-18'
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user/schedules
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user/myschedule
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/logout
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/me
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
